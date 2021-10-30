@@ -1,0 +1,29 @@
+<div class="row">
+  <div class="col-2">
+  </div>
+  <div class="col-10">
+    <div class="table-responsive">
+      <table class="table table-striped">
+        <thead>
+          <tr>
+            <th
+              scope="col"
+              *ngFor="let header of headers"
+            >
+              {{ header }}
+            </th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr
+            app-row
+            *ngFor="let prop of ObjProps"
+            [data]="data"
+            [item]="data[prop]"
+          >
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</div>

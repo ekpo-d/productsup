@@ -1,0 +1,10 @@
+<td
+  *ngFor="let field of item | keyvalue: originalOrder"
+  (click)="toggleSideNav(item)"
+>
+  {{ 
+    field.value.length > 20
+    ? (field.value | slice:0:20) + '...'
+    : (field.value)
+  }}
+</td>
