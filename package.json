@@ -3,10 +3,16 @@
   "version": "0.0.0",
   "scripts": {
     "ng": "ng",
-    "start": "ng serve",
+    "start": "concurrently yarn:backend yarn:frontend",
     "build": "ng build",
     "watch": "ng build --watch --configuration development",
-    "test": "ng test"
+    "test": "ng test",
+    "frontend": "ng serve",
+    "backend": "npx json-server --watch db.json --port 5000",
+    "doc": "npx compodoc -p tsconfig.doc.json",
+    "e2e": "cypress run",
+    "cypress:open": "cypress open",
+    "cypress:run": "cypress run"
   },
   "private": true,
   "dependencies": {
@@ -26,14 +32,26 @@
     "@angular-devkit/build-angular": "~12.2.12",
     "@angular/cli": "~12.2.12",
     "@angular/compiler-cli": "~12.2.0",
+    "@compodoc/compodoc": "^1.1.15",
+    "@cypress/schematic": "^1.5.3",
+    "@types/chai": "^4.2.22",
+    "@types/cucumber": "^7.0.0",
     "@types/jasmine": "~3.8.0",
     "@types/node": "^12.11.1",
+    "chai": "^4.3.4",
+    "concurrently": "^6.3.0",
+    "cucumber": "^7.0.0-rc.0",
+    "cypress": "latest",
+    "cypress-cucumber-preprocessor": "^4.3.0",
     "jasmine-core": "~3.8.0",
+    "json-server": "^0.17.0",
     "karma": "~6.3.0",
     "karma-chrome-launcher": "~3.1.0",
     "karma-coverage": "~2.0.3",
     "karma-jasmine": "~4.0.0",
     "karma-jasmine-html-reporter": "~1.7.0",
+    "protractor-cucumber-framework": "^8.2.6",
+    "tsify": "^5.0.4",
     "typescript": "~4.3.5"
   }
 }
