@@ -1,0 +1,10 @@
+th:first-letter {
+  text-transform:capitalize;
+}
+.table-striped tbody tr:nth-of-type(odd):hover, tr:hover {
+  background-color: #d1dbff;
+  cursor: pointer;
+}
+.col-2:first-child {
+  background: #f7f7f7;
+}
