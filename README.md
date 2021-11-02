@@ -45,7 +45,7 @@ Run `yarn doc` to generate project documentation.
 ## Libs
 This app uses a couple of external libraries/tools;
 1. Bootstrap - CSS framework for styling
-2. JSON Server - Full fake REST API for the backend
+2. JSON Server - Full fake REST API for the backend. Data supplied to the frontend can be changed by updating the `db.json` file.
 3. Compodoc - Documentation generation tool
 4. Cucumber - Behavior-Driven Development (BDD) testing toolkit.
 
