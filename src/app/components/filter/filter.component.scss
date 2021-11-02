@@ -1,0 +1,55 @@
+.filter {
+  position: fixed;
+  overflow-y: scroll;
+  height: 100vh;
+  flex: 0 0 16.666667%;
+  max-width: 16.666667%;
+
+  h3 {
+    color: #0037ff;
+    font-size: 1rem;
+    padding: 0.75rem 1rem;
+    line-height: 1.5;
+  }
+  .content {
+    padding-left: 1rem;
+    padding-right: 2.7rem;
+    margin-bottom: 2rem;
+  }
+  .input-wrap{
+    margin-bottom: 1.5rem;
+  }
+  .empty{
+    color: #b5b5b5;
+  }
+  .error {
+    color: rgb(255, 104, 104);
+    font-size: 0.8rem;
+  }
+  .clear {
+    display: block;
+    font-size: 0.9rem;
+    width: 100%;
+    outline: 0;
+    border: 0;
+    background: transparent;
+    text-align: center;
+    margin-top: 10px;
+    color: rgb(255, 104, 104);
+    cursor: pointer;
+  }
+  .applied {
+    padding: 0.5rem;
+    background-color: #d1dbff;
+    font-size: 0.8rem;
+    margin-bottom: 1rem;
+
+    p {
+      margin-bottom: 5px;
+    }
+    .side-nav-bar-close {
+      color: rgb(255, 104, 104);
+      cursor: pointer;
+    }
+  }
+}

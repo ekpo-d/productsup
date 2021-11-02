@@ -1,0 +1,59 @@
+<div class="filter">
+  <h3>Filter Data</h3>
+  <div class="content">
+    <form (ngSubmit)="addFilter()">
+      <div class="input-wrap">
+        <label class="form-label">
+          Column Name
+        </label>
+        <select class="custom-select" [(ngModel)]="column" name="column">
+          <option value="">Choose a column</option>
+          <option *ngFor="let header of headers" [value]="header">
+            {{ header }}
+          </option>
+        </select>
+      </div>
+      <div class="input-wrap">
+        <label for="operator" class="form-label">
+          Operator
+        </label>
+        <select class="custom-select" [(ngModel)]="operator" name="operator">
+          <option value="">Choose an operator</option>
+          <option value="less than or equal to">less than or equal to (≤)</option>
+          <option value="greater than or equal to">greater than or equal to (≥)</option>
+          <option value="equals">equals (=)</option>
+          <option value="does not equal">does not equal (≠)</option>
+          <option value="contains">contains</option>
+          <option value="does not contain">does not contain</option>
+        </select>
+      </div>
+      <div class="input-wrap">
+        <label for="value" class="form-label">
+          Value
+        </label>
+        <input type="text" class="form-control" [(ngModel)]="filterValue" name="value">
+      </div>
+      <p class="error" *ngIf="errorData.display">{{ errorData.message }}</p>
+      <input type="submit" value="Apply Filter" class="btn btn-block btn-success" />
+    </form>
+    <button class="clear" (click)="resetData()">Reset Data</button>
+  </div>
+  
+  <h3>Filters Applied</h3>
+
+  <div class="content">
+    <p class="empty" *ngIf="!filters.length">No filter applied yet...</p>
+    <div class="applied" *ngFor="let filter of filters; let i = index">
+      <div class="row">
+        <div class="col-9">
+          <p>{{ filter.column }}</p>
+          <p>{{ filter.operator }}</p>
+          <p>{{ filter.value }}</p>
+        </div>
+        <div class="col-3">
+          <span class="material-icons side-nav-bar-close" (click)="removeFilter(i)">clear</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
